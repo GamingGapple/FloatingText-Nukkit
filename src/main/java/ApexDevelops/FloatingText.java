@@ -52,16 +52,16 @@ public class FloatingText extends PluginBase implements Listener {
 	    String line2 = config.getString("LINE2");
 	    String line3 = config.getString("LINE3");
 	    String line4 = config.getString("LINE4");
+	    String line5 = config.getString("LINE5");
 	    int online = Server.getInstance().getOnlinePlayers().size();
 	    int maxonline = this.getServer().getMaxPlayers();
 	    String playername = player.getName();                                                  
  	    String rs = TextFormat.RESET + "\n";
-	    String allline = line1 + rs + line2 + rs + line3 + rs + line4;
+	    String allline = line1 + rs + line2 + rs + line3 + rs + line4 + rs + line5;
 	    allline = allline.replace("{ONLINE}", String.valueOf(online));
 	    allline = allline.replace("{MAXONLINE}", String.valueOf(maxonline));
 	    allline = allline.replace("{PLAYERNAME}", String.valueOf(playername));
 	    FloatingTextParticle particle = new FloatingTextParticle(new Vector3(x1, y1, z1), allline);
 	    e.getPlayer().getLevel().addParticle(particle);
-	    //particle.setInvisible();
     }
 }
